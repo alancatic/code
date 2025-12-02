@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // when the user clicks add event
-    document.getElementById("saveEventBtn").addEventListener("click", () => {
+    document.getElementById("addEventBtn").addEventListener("click", () => {
         let title = document.getElementById("eventTitle").value.trim();
         let desc  = document.getElementById("eventDesc").value.trim();
         let time  = document.getElementById("eventTime").value.trim();
@@ -86,3 +86,4 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
