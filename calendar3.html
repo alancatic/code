@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calendar</title>
+    <link rel="stylesheet" href="awesome.css">
+</head>
+<body>
+
+<div class="calendarContainer">
+    <div class="image">
+        <img src="https://cdn.britannica.com/09/60909-050-19DE5DC5/bridge-Neretva-River-Bosnia-and-Herzegovina-Mostar-1993.jpg" alt="Image">
+        <div class="monthYear">December 2025</div>
+    </div>
+
+    <!-- Calendar table -->
+    <table class="calendar">
+        <thead>
+            <tr class="days">
+                <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td>
+            </tr>
+            <tr>
+                <td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td>
+            </tr>
+            <tr>
+                <td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td>
+            </tr>
+            <tr>
+                <td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td>
+            </tr>
+            <tr>
+                <td>28</td><td>29</td><td>30</td><td>31</td><td></td><td></td><td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div id="eventModal">
+    <div class="modalContent">
+        <h2>Events</h2>
+        <ul id="eventList" style="margin-bottom:12px; padding-left:20px;"></ul>
+        <input id="eventTitle" type="text" placeholder="Event Title">
+        <textarea id="eventDesc" placeholder="Event Description"></textarea>
+        <input id="eventTime" type="time">
+        <button id="saveEventBtn">Add Event</button>
+    </div>
+</div>
+
+<script src="interactive.js"></script>
+
+</body>
+</html>
