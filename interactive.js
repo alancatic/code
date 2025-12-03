@@ -45,35 +45,42 @@ document.addEventListener("DOMContentLoaded", () => {
         let title = document.getElementById("eventTitle").value.trim();
         let desc  = document.getElementById("eventDesc").value.trim();
         let time  = document.getElementById("eventTime").value.trim();
-	// reads input values
+	    // reads input values
 
-	// if any field is empty it gives an alert
+	    // if any field is empty it gives an alert
         if (!title || !desc || !time) {
             alert("Please fill in all fields.");
             return;
         }
 
-	// if the event has no events, it creates an array and adds it
+	    // if the event has no events, it creates an array and adds it
         if (!events[currentDayCell.day]) {
             events[currentDayCell.day] = [];
         }
 
+		// if there is a time clash an alert appears, preventing this
+		let timeClash = events[currentDayCell.day].some(ev => ev.time === time);
+		if (timeClash) {
+			alert("An event already exists at this time. Please choose a different time.");
+			return;
+		}
+		
         events[currentDayCell.day].push({ title, desc, time });
 
-	// adds an event dot when there are events present for the day
+	    // adds an event dot when there are events present for the day
         if (!currentDayCell.cell.querySelector(".eventDot")) {
             let dot = document.createElement("div");
             dot.classList.add("eventDot");
             currentDayCell.cell.appendChild(dot);
         }
 
-	// displays the new event in the popup
+	    // displays the new event in the popup
         const eventList = document.getElementById("eventList");
         const li = document.createElement("li");
         li.textContent = `${time} - ${title}: ${desc}`;
         eventList.appendChild(li);
 
-	// clears input fields after saving
+	    // clears input fields after saving
         document.getElementById("eventTitle").value = "";
         document.getElementById("eventDesc").value = "";
         document.getElementById("eventTime").value = "";
@@ -86,4 +93,5 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
 
