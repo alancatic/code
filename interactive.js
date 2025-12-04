@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-	    // if the event has no events, it creates an array and adds it
+	    // if the day has no events, it creates an array and adds it
         if (!events[currentDayCell.day]) {
             events[currentDayCell.day] = [];
         }
@@ -93,5 +93,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
 
 
